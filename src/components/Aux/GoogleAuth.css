@@ -1,0 +1,20 @@
+.GoogleAuth-btn{
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    color: white;
+    font-weight: bold;
+}
+
+
+.GoogleAuth-btn--signOut{
+    background: transparent;
+    border-color: white;
+}
+
+
+.GoogleAuth-btn--signIn{
+    background: white;
+    color: #00bfa5;
+}

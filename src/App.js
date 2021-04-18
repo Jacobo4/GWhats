@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import Home from "./pages/Home/Home.page";
 import Chat from "./pages/Chat/Chat.page";
 import Header from "./layouts/Header/Header.layout";
+import 'normalize.css';
+import './styles/index.css';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import {connect} from "react-redux";

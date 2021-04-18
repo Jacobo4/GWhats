@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import './GoogleAuth.css';
 import { connect } from "react-redux";
-import {signIn, signOut} from "../../redux/actions/auth.action";
+import {signIn, signOut} from "../../redux/actions/auth.actions";
 
 const apiConfig = {
     apiKey: "AIzaSyCXgkVD9sXXaUzjs4UAGYlHlKEtTWjLqYg",
@@ -50,15 +51,13 @@ class GoogleAuth extends Component {
       return null;
     } else if (this.props.isSignedIn) {
       return (
-        <button onClick={this.onSignOut} className="ui red google button">
-          <i className="google icon" />
+        <button onClick={this.onSignOut} className="GoogleAuth-btn GoogleAuth-btn--signOut">
           Sign Out
         </button>
       );
     } else {
       return (
-        <button onClick={this.onSignIn} className="ui red google button">
-          <i className="google icon" />
+        <button onClick={this.onSignIn} className="GoogleAuth-btn GoogleAuth-btn--signIn">
           Sign In
         </button>
       );

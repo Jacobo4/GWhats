@@ -1,15 +1,16 @@
 import {Component} from "react";
-import './Header.css';
+import './Header.layout.css';
 import React from "react";
-import GoogleAuth from "../../Components/Aux/GoogleAuth";
+import GoogleAuth from "../../components/Aux/GoogleAuth";
 
 class Header extends Component {
 
     render() {
         return (
-            <div>
+            <header>
+                <h1>Gwhats</h1>
                 <GoogleAuth/>
-            </div>
+            </header>
         );
     }
 }
