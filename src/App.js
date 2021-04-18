@@ -1,53 +1,34 @@
-/* global gapi */
 import React, {Component} from "react";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/Home.page";
+import Chat from "./pages/Chat/Chat.page";
+import Header from "./layouts/Header/Header.layout";
+import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
-const apiConfig = {
-    apiKey: "AIzaSyCXgkVD9sXXaUzjs4UAGYlHlKEtTWjLqYg",
-    clientId: "21821511021-f1vhta3cvkl8lhlep5k8i9anqg2i37eq.apps.googleusercontent.com",
-    scope: "https://www.googleapis.com/auth/gmail.readonly",
-    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"]
-};
+import {connect} from "react-redux";
 
-export default class App extends Component {
-    state = {
-        gapiLoaded: false
-    };
 
-    componentDidMount() {
-        const script = document.createElement("script");
-        script.src = "https://apis.google.com/js/client.js";
-
-        script.onload = () => {
-            window.gapi.load("client:auth2", () => {
-                gapi.client.init(apiConfig).then(() => {
-                    this.setState({
-                        gapiLoaded: true
-                    });
-                });
-            });
-        };
-
-        document.body.appendChild(script);
-    }
-
+class App extends Component {
 
     render() {
-        const {gapiLoaded} = this.state;
-        if (gapiLoaded) {
-            return (
-                <div>
-                    <Home/>
-                </div>
-            );
+        const {isSignedIn} = this.props;
 
-        } else {
-            return (
-                <div>Cargando ...
-                </div>);
-        }
-
+        return (
+            <BrowserRouter>
+                <Header/>
+                <Switch>
+                    <Route path="/" render={() => (isSignedIn ? <Chat/> : <Home/>)}/>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/chat" render={() => (isSignedIn ? <Chat/> : <Redirect to="/home" />)}/>
+                </Switch>
+            </BrowserRouter>
+        );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {isSignedIn: state.auth.isSignedIn};
+}
+
+export default connect(mapStateToProps)(App);
 
 

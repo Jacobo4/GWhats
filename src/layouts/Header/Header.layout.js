@@ -1,13 +1,19 @@
 import {Component} from "react";
-
 import './Header.css';
+import React from "react";
+import GoogleAuth from "../../Components/Aux/GoogleAuth";
 
-export default class Header extends Component {
+class Header extends Component {
 
     render() {
         return (
-           <p>asd</p>
+            <div>
+                <GoogleAuth/>
+            </div>
         );
     }
 }
+
+
+export default Header;
 
