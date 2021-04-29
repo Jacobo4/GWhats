@@ -1,21 +1,21 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {gapiUser} from "../../redux/actions/gapiP.actions";
+import {getUserProfile} from "../../redux/actions/getUserProfile.actions";
 
 
 class ChatPage extends Component {
     componentDidMount() {
-        this.props.fetchUsers();
+        this.props.fetchUserProfile();
     }
 
-
     render() {
-        const users = this.props.userData.map(user =>{
-            return <li key={user.id}>{user.name}</li>
-        })
+
+        // const users = this.props.userData.map(user =>{
+        //     return <li key={user.id}>{user.name}</li>
+        // })
         return (
             <div>
-                {users}
+                {/*`${this.props.userData}`*/}
             </div>
         );
 
@@ -24,13 +24,13 @@ class ChatPage extends Component {
 
     const mapStateToProps = state => {
     return {
-        userData: state.gapiP.user
+        userProfile: state.user.profile
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUsers: () => dispatch(gapiUser())
+        fetchUserProfile: () => dispatch(getUserProfile())
     }
 }
 

@@ -1,8 +1,8 @@
 const initialState = {
-    isSignedIn: null
+    isSignedIn: null,
 };
 
-const reducer = (state = initialState, {type}) => {
+const reducer = (state = initialState, {type, payload}) => {
     switch (type) {
 
         case 'SIGN_IN':

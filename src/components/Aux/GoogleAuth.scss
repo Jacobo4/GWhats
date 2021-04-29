@@ -1,0 +1,41 @@
+.GoogleAuthBtn {
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  color: white;
+  font-weight: bold;
+
+  &--signOut {
+    background: transparent;
+    border-color: white;
+
+    &:hover {
+
+      background: transparent;
+      border-color: white;
+
+    }
+  }
+
+  &--signIn {
+    background: white;
+    color: #00bfa5;
+
+    &:hover {
+      background: transparent;
+      border-color: white;
+      color: white;
+    }
+  }
+
+  &--color-red{
+    background: #EA4335;
+    color: white;
+    &:hover{
+      color: #EA4335;
+      background: white;
+      border-color: #EA4335;
+    }
+  }
+}

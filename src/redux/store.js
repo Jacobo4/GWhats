@@ -5,10 +5,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 import auth from './reducers/auth.reducer';
-import gapiP from "./reducers/gapiP.reducer";
+import user from "./reducers/getUserProfile.reducer";
 const reducer = combineReducers({
     auth: auth,
-    gapiP: gapiP,
+    user: user,
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger, thunk)));

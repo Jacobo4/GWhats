@@ -1,0 +1,68 @@
+.Home {
+  padding: 15px;
+  display: grid;
+  justify-content: center;
+  grid-gap: 25px;
+  @media (min-width: 565px) {
+    padding: 25px 15px;
+    grid-gap: 50px;
+  }
+}
+
+.hero {
+  display: grid;
+  justify-items: center;
+  grid-gap: 15px;
+  max-width: 1200px;
+
+  @media (min-width: 565px) {
+    grid-template-columns: 2fr 1fr;
+    margin-top: 150px;
+
+  }
+
+
+  &-title-wrapper {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-gap: 15px;
+    max-width: 500px;
+    justify-content: center;
+    text-align: justify;
+    @media (min-width: 565px) {
+      justify-content: left;
+      text-align: start;
+
+    }
+
+    button {
+      padding: 10px 30px;
+      width: max-content;
+      font-size: 18px;
+    }
+  }
+
+  &-images-wrapper {
+    align-items: center;
+    display: grid;
+  }
+
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__images {
+    padding: 15px;
+  }
+
+  &__image {
+    max-width: 150px;
+    margin: 0 -10px;
+  }
+
+}
+
