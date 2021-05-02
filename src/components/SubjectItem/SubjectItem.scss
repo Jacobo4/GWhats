@@ -1,0 +1,24 @@
+.SubjectItem {
+  transition: all 0.2s ease-in-out;
+  display: grid;
+  grid-gap: 0 15px;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+
+  &:hover {
+    background: #EDEDED;
+    cursor: pointer;
+
+  }
+
+  &__name {
+  }
+
+  &__messagePreview {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

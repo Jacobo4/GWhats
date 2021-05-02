@@ -1,0 +1,40 @@
+.ContactItem {
+  transition: all 0.2s ease-in-out;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0 15px;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+
+  &:hover {
+    background: #EDEDED;
+    cursor: pointer;
+  }
+
+  &__thumbnail {
+    max-width: 50px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 100%;
+
+  }
+
+  &-info {
+
+
+  }
+
+  &__name {
+    font-size: 17px;
+    color: #020202;
+  }
+
+  &__email {
+    font-size: 14px;
+    color: #8e8e8e;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+
+  }
+}

@@ -1,0 +1,78 @@
+.ChatPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+
+  > * {
+    max-height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0 15px;
+    align-items: center;
+    justify-content: start;
+    background: #EDEDED;
+    padding: 20px;
+    height: 80px;
+
+    &__thumbnail {
+      max-width: 40px;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__name-wrapper {
+    }
+
+    &__name {
+      font-weight: bold;
+      font-size: 16px;
+      color: #020202;
+    }
+
+    &__email {
+      font-size: 14px;
+      color: #8e8e8e;
+    }
+  }
+
+  .contacts {
+    overflow-y: auto;
+    list-style: none;
+
+    &-search {
+      width: 100%;
+      display: flex;
+      background: #F5F5F5;
+      padding: 10px 20px;
+    }
+
+    &__search-input {
+      padding: 10px 30px;
+      border: transparent;
+      border-radius: 16px;
+      width: 100%;
+    }
+
+  }
+
+  .subjects {
+    &__title {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      background: #F5F5F5;
+    }
+
+    &__wrapper {
+      overflow-y: auto;
+      list-style: none;
+    }
+  }
+}
