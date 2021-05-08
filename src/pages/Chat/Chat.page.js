@@ -5,9 +5,12 @@ import {getContacts} from "../../redux/actions/getContacts.actions";
 import './Chat.scss';
 import ContactItem from "../../components/ContactItem/ContactItem";
 import SubjectItem from "../../components/SubjectItem/SubjectItem";
+import Loader from "../../components/Loader/Loader";
 
 
 class ChatPage extends Component {
+
+
     componentDidMount() {
         this.props.fetchUserProfile();
         this.props.fetchContacts();
@@ -16,20 +19,24 @@ class ChatPage extends Component {
     render() {
 
         const {fullName, email, image: imageUrl} = this.props.userProfile;
-        const {contacts: userContacts} = this.props.userContacts;
+        const {contacts: userContacts, loading: contactsAreLoading} = this.props.userContacts;
+        const {subjects: userSubjects, loading: subjectsAreLoading} = this.props.userSubjects;
 
-        const contacts = userContacts.map((contact, i) =>{
-            return <ContactItem key={i.toString()} name={contact.name} email={contact.email}/>
+        const contacts = userContacts.map((contact, index) => {
+            return (
+                <ContactItem key={index.toString()} name={contact.name} email={contact.email}/>
+            )
         });
-        const subjects = [];
 
-
-        for (let i = 0; i <= 20; i++) {
-            subjects.push(<SubjectItem key={i.toString()} name={`Asunto ${i}`} messagePreview={`Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book.`}/>)
+        let subjects = <p>Hola</p>
+        if (userSubjects.length) {
+            subjects = userSubjects[userSubjects.length - 1].data.map((subject, i) => {
+                const snippet = subject[subject.length - 1].snippet;
+                const name = subject[0].headers.subject;
+                return <SubjectItem key={i.toString()} name={name} messagePreview={snippet}/>
+            })
         }
+
 
         return (
             <div className="ChatPage">
@@ -45,14 +52,14 @@ class ChatPage extends Component {
                         <input type="text" placeholder="Buscar contacto" className="contacts__search-input"/>
                     </div>
                     <ul className="contacts">
-                        {contacts}
+                        {contactsAreLoading ? <Loader/> : contacts}
                     </ul>
                 </aside>
 
                 <aside className="subjects">
                     <h2 className="subjects__title">Asuntos</h2>
                     <ul className="subjects__wrapper">
-                        {subjects}
+                        {subjectsAreLoading ? <Loader/> : subjects}
                     </ul>
                 </aside>
                 <main className="chat"></main>
@@ -66,14 +73,15 @@ class ChatPage extends Component {
 const mapStateToProps = state => {
     return {
         userProfile: state.user,
-        userContacts: state.contacts
+        userContacts: state.contacts,
+        userSubjects: state.subjects,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchUserProfile: () => dispatch(getUserProfile()),
-        fetchContacts: () => dispatch(getContacts())
+        fetchContacts: () => dispatch(getContacts()),
     }
 }
 

@@ -3,6 +3,7 @@ import './SubjectItem.scss';
 import React from "react";
 
 class SubjectItem extends Component {
+
     render() {
         const {name, messagePreview} = this.props;
         return (

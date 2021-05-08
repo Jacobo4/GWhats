@@ -4,7 +4,7 @@
   overflow: hidden;
 
   > * {
-    max-height: calc(100vh - 76px);
+    height: calc(100vh - 76px);
     display: flex;
     flex-direction: column;
   }
@@ -44,6 +44,8 @@
   .contacts {
     overflow-y: auto;
     list-style: none;
+    height: 100%;
+
 
     &-search {
       width: 100%;
@@ -62,6 +64,7 @@
   }
 
   .subjects {
+
     &__title {
       display: grid;
       align-items: center;
@@ -73,6 +76,7 @@
     &__wrapper {
       overflow-y: auto;
       list-style: none;
+      height: 100%;
     }
   }
 }

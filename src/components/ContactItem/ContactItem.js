@@ -1,14 +1,20 @@
-import {Component} from "react";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {getSubjects} from "../../redux/actions/getSubjects.actions";
 import './ContactItem.scss';
-import React from "react";
 import defaultThumnail from '../../assets/images/defaultUser.svg';
 
 class ContactItem extends Component {
+
+    showSubjects = () =>{
+        this.props.fetchSubjects(this.props.email);
+    }
+
     render() {
         const {name, email, thumbnail = defaultThumnail} = this.props;
 
         return (
-            <li className="ContactItem">
+            <li className="ContactItem"  onClick={this.showSubjects}>
                 <img src={thumbnail} className="ContactItem__thumbnail" alt={name + " thumbnail"}/>
                 <div className="ContactItem-info">
                     <h5 className="ContactItem__name">{name}</h5>
@@ -19,6 +25,20 @@ class ContactItem extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        userSubjects: state.subjects,
+    }
+}
 
-export default ContactItem;
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchSubjects: (email) => dispatch(getSubjects(email)),
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ContactItem)
 
