@@ -1,7 +1,7 @@
 import {Component} from "react";
 import './Header.layout.scss';
 import React from "react";
-import GoogleAuth from "../../components/Aux/GoogleAuthBtn";
+import GoogleAuth from "../../components/Auxiliar/GoogleAuthBtn";
 
 class Header extends Component {
 

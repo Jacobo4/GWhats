@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './Home.scss';
 
-import GoogleAuth from "../../components/Aux/GoogleAuthBtn";
+import GoogleAuth from "../../components/Auxiliar/GoogleAuthBtn";
 import gmailIcon from "../../assets/images/gmail-icon.svg";
 import whatsappIcon from "../../assets/images/whatsapp-icon.svg";
 
