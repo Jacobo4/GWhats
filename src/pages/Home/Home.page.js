@@ -27,7 +27,6 @@ class HomePage extends Component {
                             <img className="hero__image" src={whatsappIcon} alt=""/>
                         </div>
                     </div>
-
                 </div>
             </div>
         );

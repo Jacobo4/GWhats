@@ -1,82 +1,113 @@
-.ChatPage {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  overflow: hidden;
-
-  > * {
-    height: calc(100vh - 76px);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .profile {
+  .ChatPage {
     display: grid;
-    grid-auto-flow: column;
-    grid-gap: 0 15px;
-    align-items: center;
-    justify-content: start;
-    background: #EDEDED;
-    padding: 20px;
-    height: 80px;
+    grid-template-columns: 1fr 1fr 2fr;
+    overflow: hidden;
 
-    &__thumbnail {
-      max-width: 40px;
-      border-radius: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    &__name-wrapper {
-    }
-
-    &__name {
-      font-weight: bold;
-      font-size: 16px;
-      color: #020202;
-    }
-
-    &__email {
-      font-size: 14px;
-      color: #8e8e8e;
-    }
-  }
-
-  .contacts {
-    overflow-y: auto;
-    list-style: none;
-    height: 100%;
-
-
-    &-search {
-      width: 100%;
+    > * {
+      height: calc(100vh - 56px);
       display: flex;
-      background: #F5F5F5;
-      padding: 10px 20px;
+      flex-direction: column;
+      border: 1px solid #EDEDED;
     }
 
-    &__search-input {
-      padding: 10px 30px;
-      border: transparent;
-      border-radius: 16px;
-      width: 100%;
-    }
-
-  }
-
-  .subjects {
-
-    &__title {
+    .profile {
       display: grid;
+      grid-auto-flow: column;
+      grid-gap: 0 15px;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
+      background: #EDEDED;
+      padding: 20px;
       height: 80px;
-      background: #F5F5F5;
+      border: 1px solid #EDEDED;
+
+      &__thumbnail {
+        max-width: 40px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &__name-wrapper {
+      }
+
+      &__name {
+        font-weight: bold;
+        font-size: 16px;
+        color: #020202;
+      }
+
+      &__email {
+        font-size: 14px;
+        color: #8e8e8e;
+      }
     }
 
-    &__wrapper {
+    .contacts {
       overflow-y: auto;
       list-style: none;
       height: 100%;
+
+
+
+      &-search {
+        width: 100%;
+        display: flex;
+        background: #F5F5F5;
+        padding: 10px 20px;
+
+      }
+
+      &__search-input {
+        padding: 10px 30px;
+        border: transparent;
+        border-radius: 16px;
+        width: 100%;
+      }
+
+    }
+
+    .subjects {
+
+      &__title {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        background: #F5F5F5;
+      }
+
+      &__wrapper {
+        overflow-y: auto;
+        list-style: none;
+        height: 100%;
+      }
+    }
+
+    .chat {
+      background-image: url(/assets/images/default-bg.jpg);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+
+      &__title {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        background: #F5F5F5;
+
+      }
+
+      &__messages {
+        display: grid;
+        grid-gap: 15px;
+        align-content: start;
+      }
+      &__wrapper {
+        padding: 20px;
+        overflow-y: auto;
+        list-style: none;
+        height: 100%;
+      }
     }
   }
-}

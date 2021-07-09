@@ -25,7 +25,6 @@ export const getSubjects = (email) => {
                     'id': subject.id
                 }).then(r => r)//Machetazo porque ni idea porque no dejar hacer el catch directamente
                     .catch(err => dispatch(getSubjectsFailure(err)));
-
                 // return parseMessage(subjectResult.result);
                 return subjectResult.result;
             })
