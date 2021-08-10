@@ -1,39 +1,35 @@
 .Home {
-  padding: 15px;
-  display: grid;
-  justify-content: center;
-  grid-gap: 25px;
-  @media (min-width: 565px) {
-    padding: 25px 15px;
-    grid-gap: 50px;
+
+  section {
+    padding: 15px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 25px;
+    width: 100%;
+    @media (min-width: 565px) {
+      padding: 25px 15px;
+      grid-gap: 50px;
+    }
   }
 }
 
 .hero {
   display: grid;
-  justify-items: center;
   grid-gap: 15px;
-  max-width: 1200px;
 
   @media (min-width: 565px) {
-    grid-template-columns: 2fr 1fr;
-    margin-top: 150px;
-
+    margin: 50px 0;
+    max-width: 700px;
   }
-
 
   &-title-wrapper {
     display: grid;
-    align-items: center;
-    align-content: center;
     grid-gap: 15px;
-    max-width: 500px;
-    justify-content: center;
-    text-align: justify;
+
     @media (min-width: 565px) {
       justify-content: left;
       text-align: start;
-
     }
 
     button {
@@ -45,7 +41,9 @@
 
   &-images-wrapper {
     align-items: center;
+    position: relative;
     display: grid;
+    width: 100%;
   }
 
 
@@ -53,16 +51,29 @@
   }
 
   &__description {
+
   }
 
+
   &__images {
-    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 300px;
   }
 
   &__image {
     max-width: 150px;
     margin: 0 -10px;
+
+    &:nth-child(1) {
+      max-width: 100%;
+      position: absolute;
+      z-index: -10;
+      filter: blur(2px);
+    }
   }
+
 
 }
 

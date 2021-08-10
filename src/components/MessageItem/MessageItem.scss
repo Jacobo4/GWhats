@@ -9,15 +9,15 @@
   &--fromMe {
     background: #4285F4;
     color: white;
-    justify-self: left;
-    margin-left: 40px;
+    justify-self: right;
+    //margin-right: 40px;
     border-top-right-radius: 0;
   }
 
   &--fromThem {
     background: white;
-    justify-self: right;
-    margin-right: 40px;
+    justify-self: left;
+    //margin-left: 40px;
     border-top-left-radius: 0;
   }
   &__arrow {

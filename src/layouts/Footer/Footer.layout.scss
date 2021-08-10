@@ -1,0 +1,29 @@
+footer {
+  background: #273443;
+  .index{
+    padding: 50px 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+
+    &__title{
+      color: #A9AEB4;
+      margin-bottom: 15px;
+    }
+    li{
+      margin: 5px 0;
+    }
+    a{
+      color: white;
+      transition: 0.3s all ease-in-out;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .license{
+    padding: 25px 150px;
+    background: #232F3C;
+    color: white;
+  }
+}
